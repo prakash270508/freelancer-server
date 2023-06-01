@@ -1,0 +1,9 @@
+#Node module
+node_modules
+/node_modules
+.node_modules
+
+
+#Variable environments
+.env 
+/.env
