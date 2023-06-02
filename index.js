@@ -5,6 +5,8 @@ const colors = require("colors");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const { connectDataBase } = require("./utils/dbConnection");
+const userRoute = require("./routes/userRoute");
+const projectRoute = require("./routes/projectRoute");
 dotenv.config();
 
 connectDataBase();
@@ -17,6 +19,10 @@ const PORT = process.env.PORT || 5000;
 app.get("/", (req, res) => {
   res.json({ message: "Woking Fine" });
 });
+
+//Route
+app.use("/api", userRoute);
+app.use("/api/project", projectRoute);
 
 //Error handlling
 app.use((error, req, res, next) => {
