@@ -4,8 +4,10 @@ const cors = require("cors");
 const colors = require("colors");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
-
+const { connectDataBase } = require("./utils/dbConnection");
 dotenv.config();
+
+connectDataBase();
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
