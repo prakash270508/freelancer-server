@@ -8,8 +8,14 @@ const ClientSchema = new mongoose.Schema(
     },
     company: String,
     projects: [],
-    totalSpend: Number,
-    totalBalance: Number,
+    totalSpend: {
+      type: Number,
+      default: 0,
+    },
+    totalBalance: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );

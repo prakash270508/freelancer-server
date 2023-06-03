@@ -20,10 +20,13 @@ exports.createProject = async (req, res, next) => {
   });
 
   client.projects.push(project);
-  client.totalBalance -= Number(budget);
+//   client.totalBalance -= Number(budget);
 
   await client.save();
   await project.save();
 
   return { project, client };
 };
+
+
+

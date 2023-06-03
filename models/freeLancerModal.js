@@ -8,7 +8,10 @@ const freeLancerSchema = new mongoose.Schema(
     },
     skills: [String],
     hourlyRate: Number,
-    totalIncome: Number,
+    totalIncome: {
+      type: Number,
+      default : 0
+    },
     appliedjob: [],
     approvedjob: [],
     ongoingProject: [],

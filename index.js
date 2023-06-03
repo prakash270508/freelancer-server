@@ -7,6 +7,8 @@ const cookieParser = require("cookie-parser");
 const { connectDataBase } = require("./utils/dbConnection");
 const userRoute = require("./routes/userRoute");
 const projectRoute = require("./routes/projectRoute");
+const freelancerRoute = require("./routes/freelancerRoute");
+const clientRoute = require("./routes/clientRoute");
 dotenv.config();
 
 connectDataBase();
@@ -23,6 +25,8 @@ app.get("/", (req, res) => {
 //Route
 app.use("/api", userRoute);
 app.use("/api/project", projectRoute);
+app.use("/api/freelancer", freelancerRoute);
+app.use("/api/client", clientRoute);
 
 //Error handlling
 app.use((error, req, res, next) => {

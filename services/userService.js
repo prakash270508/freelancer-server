@@ -34,3 +34,16 @@ exports.registerService = async (req, res, next) => {
 
   return newUser;
 };
+
+//Update user
+exports.updateUserService = async (req) => {
+  const { id } = req.params;
+
+  const user = await User.findByIdAndUpdate(
+    id,
+    { $set: req.body },
+    { new: true }
+  );
+
+  return user;
+};
