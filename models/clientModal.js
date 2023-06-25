@@ -7,7 +7,10 @@ const ClientSchema = new mongoose.Schema(
       required: true,
     },
     company: String,
-    projects: [],
+    project: {
+      type : Number,
+      default : 0,
+    },
     totalSpend: {
       type: Number,
       default: 0,

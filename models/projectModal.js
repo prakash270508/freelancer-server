@@ -9,6 +9,8 @@ const ProjectModal = new mongoose.Schema(
     title: String,
     description: String,
     skillsRequired: [String],
+    noOfApplication: Number,
+    listOfApplicant: [],
     budget: Number,
     duration: String,
     status: {
